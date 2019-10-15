@@ -1,7 +1,7 @@
 ## How to Deploy
 
 ### Create Docker container with all dependencies
-In the docker folder run (replace cammywammy with your own docker hub account):
+In the docker folder run (replace hgarg with your own docker hub account):
 - docker login
 - docker build -t emailclassifier-image .
 - docker tag emailclassifier-image hgarg/emailclassifier-image
