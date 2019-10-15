@@ -4,12 +4,12 @@
 In the docker folder run (replace cammywammy with your own docker hub account):
 - docker login
 - docker build -t emailclassifier-image .
-- docker tag emailclassifier-image cammywammy/emailclassifier-image
-- docker push cammywammy/emailclassifier-image
+- docker tag emailclassifier-image hgarg/emailclassifier-image
+- docker push hgarg/emailclassifier-image
 
 ### Deploy the code to OpenWhisk
 In the deploy-pkg folder, zip up all three files into classifier.zip then run (note: add --web true to expose as a REST API):
-- wsk action create score-text --docker cammywammy/emailclassifier-image classifier.zip
+- wsk action create score-text --docker hgarg/emailclassifier-image classifier.zip
 
 Test with (may take a wee bit of time to deploy, so you may need to reun the test a few times):
 - wsk action invoke score-text --param text "I'm gonna kick your ass" -b
